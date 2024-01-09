@@ -33,7 +33,7 @@ jobs:
         run: echo "repository_name=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
 
       - name : Setup NDK
-        uses: actions/setup-ndk@v3
+        uses: nttld/setup-ndk@v3
         with:
          ndk-version: r25c
       - run: ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./Application.mk
